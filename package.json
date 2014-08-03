@@ -1,0 +1,25 @@
+{
+  "name": "fd-vec2",
+  "version": "0.0.0",
+  "description": "2D vector",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaz303/fd-vec2.git"
+  },
+  "keywords": [
+    "vector",
+    "math",
+    "2d",
+    "game"
+  ],
+  "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaz303/fd-vec2/issues"
+  },
+  "homepage": "https://github.com/jaz303/fd-vec2"
+}
