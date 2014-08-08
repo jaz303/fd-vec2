@@ -11,18 +11,14 @@ function Vec2(x, y) {
 }
 
 //
-//
-
-Vec2.prototype.eq = function(rhs) {
-	return this.x === rhs.x && this.y === rhs.y;
-}
-
-//
-// Return new vectors
+// Clone
 
 Vec2.prototype.clone = function() {
 	return new Vec2(this.x, this.y);
 }
+
+//
+// Operations returning new vectors
 
 Vec2.prototype.add = function(rhs) {
 	return new Vec2(this.x + rhs.x, this.y + rhs.y);
@@ -97,6 +93,10 @@ Vec2.prototype.adjust_ = function(rhs, amount) {
 
 //
 // Scalar
+
+Vec2.prototype.eq = function(rhs) {
+	return this.x === rhs.x && this.y === rhs.y;
+}
 
 Vec2.prototype.distance = function(rhs) {
 	var dx = this.x - rhs.x,

@@ -1,25 +1,49 @@
-var Vec2 = require('./Vec2');
-
 var sqrt    = Math.sqrt,
     cos     = Math.cos,
     sin     = Math.sin;
 
-module.exports = exports = function(x, y) {
-    return new Vec2(x, y);
-};
+//
+// Smart constructor
 
+module.exports = exports = smartConstructor;
+function smartConstructor(x, y) {
+    switch (arguments.length) {
+        case 0: return zero();
+        case 1: return clone(x);
+        case 2: return make(x, y);
+        default: throw new Error("invalid number of arguments to vec2 smart constructor");
+    }
+}
+
+//
+// Class
+
+var Vec2 = require('./Vec2');
 exports.Vec2 = Vec2;
 
-exports.zero = function() {
+//
+// Constructors
+
+exports.zero = zero;
+function zero() {
     return new Vec2(0, 0);
 }
 
-exports.eq = function(v1, v2) {
-    return v1.x === v2.x && v1.y === v2.y;
+exports.clone = clone;
+function clone(vec) {
+    return new Vec2(vec.x, vec.y);
 }
 
-exports.clone = function(v) {
-    return new Vec2(v.x, v.y);
+exports.make = make;
+function make(x, y) {
+    return new Vec2(x, y);
+}
+
+//
+// Library
+
+exports.eq = function(v1, v2) {
+    return v1.x === v2.x && v1.y === v2.y;
 }
 
 exports.add = function(v1, v2, out) {
