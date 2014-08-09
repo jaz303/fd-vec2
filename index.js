@@ -1,6 +1,7 @@
 var sqrt    = Math.sqrt,
     cos     = Math.cos,
-    sin     = Math.sin;
+    sin     = Math.sin,
+    atan2   = Math.atan2;
 
 //
 // Smart constructor
@@ -88,7 +89,8 @@ exports.distancesq = function(v1, v2) {
     return dx*dx + dy*dy;
 }
 
-exports.magnitude = function(v) {
+exports.magnitude = magnitude;
+function magnitude(v) {
     return sqrt(v.x*v.x + v.y*v.y);
 }
 
@@ -106,10 +108,16 @@ exports.adjust = function(v, delta, amount, out) {
     out.y = v.y + delta.y * amount;
 }
 
-exports.dot = function(v1, v2) {
+exports.cross = cross;
+function cross(v1, v2) {
+    return v1.x*v2.y - v1.y*v2.x;
+}
+
+exports.dot = dot;
+function dot(v1, v2) {
     return v1.x*v2.x + v1.y*v2.y;
 }
 
 exports.angle = function(v1, v2) {
-    return Math.atan2(v2.y - v1.y, v2.x - v1.x);
+    return atan2(cross(v1, v2), dot(v1, v2));
 }
