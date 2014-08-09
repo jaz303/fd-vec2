@@ -126,6 +126,7 @@ Vec2.prototype.dot = function(rhs) {
     return this.x*rhs.x + this.y*rhs.y;
 }
 
+// returns angle through which this vector must be rotated to equal rhs
 Vec2.prototype.angle = function(rhs) {
-    return atan2(this.cross(rhs), this.dot(rhs));
+    return atan2(rhs.cross(this), rhs.dot(this));
 }

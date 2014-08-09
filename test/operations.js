@@ -47,7 +47,7 @@ test.binaryOperator(
     'angle',
     vec2(0,5),
     vec2(5,0),
-    -Math.PI / 2,
+    Math.PI / 2,
     {inexact: true}
 );
 
@@ -55,7 +55,7 @@ test.binaryOperator(
     'angle',
     vec2(0,5),
     vec2(-5,0),
-    Math.PI / 2,
+    -Math.PI / 2,
     {inexact: true}
 );
 

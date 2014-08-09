@@ -118,6 +118,7 @@ function dot(v1, v2) {
     return v1.x*v2.x + v1.y*v2.y;
 }
 
+// returns angle through which v1 must be rotated to equal v2
 exports.angle = function(v1, v2) {
-    return atan2(cross(v1, v2), dot(v1, v2));
+    return atan2(cross(v2, v1), dot(v2, v1));
 }
