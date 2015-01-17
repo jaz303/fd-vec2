@@ -73,6 +73,17 @@ exports.normalize = function(v, out) {
     out.y = v.y / mag;
 }
 
+exports.limit = function(v, max, out) {
+    var mag = sqrt(v.x * v.x + v.y * v.y);
+    if (mag < max) {
+        out.x = v.x;
+        out.y = v.y;
+    } else {
+        out.x = (v.x / mag) * max;
+        out.y = (v.y / mag) * max;
+    }
+}
+
 // exports.transform = function(vec, pos, rotation, out) {
 //     var nx = pos.x + (Math.cos(rotation) * vec.x - Math.sin(rotation) * vec.y);
 //     out.y = pos.y + (Math.sin(rotation) * vec.x - Math.sin(rotation) * vec.y);

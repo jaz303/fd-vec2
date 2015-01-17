@@ -41,6 +41,15 @@ Vec2.prototype.normalize = function() {
     return new Vec2(this.x / mag, this.y / mag);
 }
 
+Vec2.prototype.limit = function(max) {
+    var mag = this.magnitude();
+    if (mag < max) {
+        return this;
+    } else {
+        return new Vec2( (this.x / mag) * max, (this.y / mag) * max );
+    }
+}
+
 Vec2.prototype.midpoint = function() {
     return new Vec2(this.x/2, this.y/2);
 }
@@ -79,6 +88,16 @@ Vec2.prototype.normalize_ = function() {
     var mag = this.magnitude();
     this.x /= mag;
     this.y /= mag;
+}
+
+Vec2.prototype.limit_ = function(max) {
+    var mag = this.magnitude();
+    if (mag < max) {
+        return;
+    } else {
+        this.x = (this.x / mag) * max;
+        this.y = (this.y / mag) * max;
+    }
 }
 
 Vec2.prototype.midpoint_ = function() {

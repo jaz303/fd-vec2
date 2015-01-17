@@ -65,6 +65,20 @@ test.unaryOperator(
     vec2(0,1)
 );
 
+test.binaryOperator(
+    'limit',
+    vec2(10, 0),
+    5,
+    vec2(5, 0)
+);
+
+test.binaryOperator(
+    'limit',
+    vec2(3.9, 0),
+    5,
+    vec2(3.9, 0)
+);
+
 test.unaryOperator(
     'magnitude',
     vec2(3,4),
