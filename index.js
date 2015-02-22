@@ -119,6 +119,13 @@ exports.adjust = function(v, delta, amount, out) {
     out.y = v.y + delta.y * amount;
 }
 
+exports.rotate = function(v, theta, out) {
+    var x = v.x * cos(theta) - v.y * sin(theta);
+    var y = v.x * sin(theta) + v.y * cos(theta);
+    out.x = x;
+    out.y = y;
+}
+
 exports.cross = cross;
 function cross(v1, v2) {
     return v1.x*v2.y - v1.y*v2.x;

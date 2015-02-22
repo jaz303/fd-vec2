@@ -61,6 +61,13 @@ Vec2.prototype.adjust = function(rhs, amount) {
     );
 }
 
+Vec2.prototype.rotate = function(theta) {
+    return new Vec2(
+        this.x * cos(theta) - this.y * sin(theta),
+        this.x * sin(theta) + this.y * cos(theta)
+    );
+}
+
 //
 // Modify in place
 
@@ -108,6 +115,13 @@ Vec2.prototype.midpoint_ = function() {
 Vec2.prototype.adjust_ = function(rhs, amount) {
     this.x += rhs.x * amount;
     this.y += rhs.y * amount;
+}
+
+Vec2.prototype.rotate_ = function(theta) {
+    var x = this.x * cos(theta) - this.y * sin(theta);
+    var y = this.x * sin(theta) + this.y * cos(theta);
+    this.x = x;
+    this.y = y;
 }
 
 //
