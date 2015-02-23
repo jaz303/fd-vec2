@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jaz303/fd-vec2",
   "devDependencies": {
-    "fd-geom-test": "^0.1.0",
+    "fd-geom-test": "^0.2.0",
     "tape": "^2.14.0",
     "uglify-js": "^2.4.15"
   }

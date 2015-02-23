@@ -97,6 +97,14 @@ test.unaryOperator(
     vec2(5,10)
 );
 
+test.binaryOperator(
+    'rotate',
+    vec2(1, 0),
+    Math.PI,
+    vec2(-1, 0),
+    {compareProperties: true, inexact: true}
+);
+
 test.test(
     'adjust',
     vec2(10,15),
