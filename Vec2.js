@@ -74,47 +74,53 @@ Vec2.prototype.rotate = function(theta) {
 Vec2.prototype.add_ = function(rhs) {
     this.x += rhs.x;
     this.y += rhs.y;
+    return this;
 }
 
 Vec2.prototype.sub_ = function(rhs) {
     this.x -= rhs.x;
     this.y -= rhs.y;
+    return this;
 }
 
 Vec2.prototype.mul_ = function(rhs) {
     this.x *= rhs;
     this.y *= rhs;
+    return this;
 }
 
 Vec2.prototype.div_ = function(rhs) {
     this.x /= rhs;
     this.y /= rhs;
+    return this;
 }
 
 Vec2.prototype.normalize_ = function() {
     var mag = this.magnitude();
     this.x /= mag;
     this.y /= mag;
+    return this;
 }
 
 Vec2.prototype.limit_ = function(max) {
     var mag = this.magnitude();
-    if (mag < max) {
-        return;
-    } else {
+    if (mag > max) {
         this.x = (this.x / mag) * max;
         this.y = (this.y / mag) * max;
     }
+    return this;
 }
 
 Vec2.prototype.midpoint_ = function() {
     this.x /= 2;
     this.y /= 2;
+    return this;
 }
 
 Vec2.prototype.adjust_ = function(rhs, amount) {
     this.x += rhs.x * amount;
     this.y += rhs.y * amount;
+    return this;
 }
 
 Vec2.prototype.rotate_ = function(theta) {
@@ -122,6 +128,7 @@ Vec2.prototype.rotate_ = function(theta) {
     var y = this.x * sin(theta) + this.y * cos(theta);
     this.x = x;
     this.y = y;
+    return this;
 }
 
 //
