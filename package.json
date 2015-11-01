@@ -1,6 +1,6 @@
 {
   "name": "fd-vec2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "2D vector",
   "main": "index.js",
   "scripts": {
